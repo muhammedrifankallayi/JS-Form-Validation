@@ -10,7 +10,7 @@ form.addEventListener('submit', function(e) {
     const password = passwordInput.value;
 
     errorDiv.textContent = '';
-    errorDiv.classList.remove('show');
+    errorDiv.style.display = 'none';
 
     if (username.trim() === '') {
         showError('Username required');
@@ -24,10 +24,7 @@ form.addEventListener('submit', function(e) {
         return;
     }
 
-    if (username.trim()  === ''|| password.trim() === '') {
-        showError('Please fill in all fields!!!');
-        return;
-    }
+
 
     console.log('Form Submitted');
     alert('Login successful!');
@@ -36,13 +33,13 @@ form.addEventListener('submit', function(e) {
 });
 
 function showError(message) {
-    errorDiv.textContent = message
-    errorDiv.classList.add('show');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
 }
 usernameInput.addEventListener('focus', function() {
-    errorDiv.classList.remove('show');
+    errorDiv.style.display = 'none';
 });
 
 passwordInput.addEventListener('focus', function() {
-    errorDiv.classList.remove('show');
+    errorDiv.style.display = 'none';
 });
